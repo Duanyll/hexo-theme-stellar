@@ -41,3 +41,35 @@
   .l_body.mobile.sidebar
     .l_left
       transform: translateX(0px)
+
+@media print
+  .l_body
+    padding: 0
+    .l_left
+      position: fixed
+      transform: translateX(-320px)
+      margin: 0
+      left: 0
+      background: var(--site-bg)
+      box-shadow: $boxshadow-card-float
+      z-index: 9
+    .l_main
+      max-width: 100%
+  .l_body.mobile
+    .l_left
+      transition: transform .3s ease-out
+  .l_body.mobile.sidebar
+    .l_left
+      transform: translateX(0px)
+  .bread-nav
+    display: none
+  #share
+    display: none
+  #read-next
+    display: none
+  #related-posts
+    display: none
+  #comments
+    display: none
+  .page-footer
+    display: none

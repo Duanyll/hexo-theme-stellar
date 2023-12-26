@@ -10,6 +10,8 @@
   height: 240px
   @media screen and (max-width: $device-mobile-max)
     height: 200px
+  @media print
+    height: 200px
   .bg
     z-index: 0
   .content 
@@ -49,6 +51,8 @@
         line-height: 0
         visibility: hidden
         @media screen and (max-width: $device-mobile-max)
+          visibility: visible
+        @media print
           visibility: visible
         svg
           width: 20px

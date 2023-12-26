@@ -354,7 +354,7 @@ if (stellar.search.service) {
           return;
         }
         var $resultArea = document.querySelector("div#search-result");
-        $inputArea.focus(function() {
+        $inputArea.focus(function () {
           var path = stellar.search[stellar.search.service]?.path || '/search.json';
           if (path.startsWith('/')) {
             path = path.substring(1);
@@ -363,12 +363,12 @@ if (stellar.search.service) {
           const filter = $inputArea.attr('data-filter') || '';
           searchFunc(path, filter, 'search-input', 'search-result');
         });
-        $inputArea.keydown(function(e) {
+        $inputArea.keydown(function (e) {
           if (e.which == 13) {
             e.preventDefault();
           }
         });
-        var observer = new MutationObserver(function(mutationsList, observer) {
+        var observer = new MutationObserver(function (mutationsList, observer) {
           if (mutationsList.length == 1) {
             if (mutationsList[0].addedNodes.length) {
               $('.search-wrapper').removeClass('noresult');
@@ -389,7 +389,7 @@ if (stellar.plugins.heti) {
   stellar.loadCSS(stellar.plugins.heti.css);
   stellar.loadScript(stellar.plugins.heti.js, { defer: true }).then(function () {
     const heti = new Heti('.heti');
-    
+
     // Copied from heti.autoSpacing() without DOMContentLoaded.
     // https://github.com/sivan/heti/blob/eadee6a3b748b3b7924a9e7d5b395d4bce479c9a/js/heti-addon.js
     //
@@ -448,3 +448,15 @@ const darkmode = {
     }
   }
 };
+
+window.onbeforeprint = function () {
+  if (window.currentTheme == 'dark') {
+    document.documentElement.classList.remove('global-darkmode');
+  }
+}
+
+window.onafterprint = function () {
+  if (window.currentTheme == 'dark') {
+    document.documentElement.classList.add('global-darkmode');
+  }
+}

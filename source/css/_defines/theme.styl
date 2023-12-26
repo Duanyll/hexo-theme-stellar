@@ -40,6 +40,8 @@ set_text_light()
   --block-hover: hsl($color-block-h, $color-block-s, 92)
   set_text_dark()
   --theme-link: $color-link
+  @media print
+    --site-bg: white
 
 set_darkmode()
   --site-bg: hsl($color-background-h, $color-background-s * 0.5, (100 - $color-background-l) * 2 + 8)

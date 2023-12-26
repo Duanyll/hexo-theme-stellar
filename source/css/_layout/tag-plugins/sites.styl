@@ -26,6 +26,8 @@
     grid-template-columns: repeat(auto-fill, "calc((100% - 2 * %s) / 3)" % 1rem)
   @media screen and (max-width: $device-mobile)
     grid-template-columns: repeat(auto-fill, "calc((100% - 1 * %s) / 2)" % 1rem)
+  @media print
+    grid-template-columns: repeat(auto-fill, "calc((100% - 2 * %s) / 3)" % 1rem)
 
 .sites-wrap .group-body .site-card .card-link
   width: 100%

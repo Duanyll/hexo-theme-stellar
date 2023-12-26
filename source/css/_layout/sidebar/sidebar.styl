@@ -12,12 +12,16 @@
       margin-top: "calc(2 * %s)" % var(--gap-l)
   @media screen and (max-width: $device-mobile-max)
     height: 100vh
+  @media print
+    height: 100vh
   
 
 .l_left[layout=wiki]
   padding-bottom: 0
   height: 100vh
   @media screen and (max-width: $device-mobile-max)
+    height: 100vh
+  @media print
     height: 100vh
   .widgets >:last-child
     margin-bottom: 6rem
