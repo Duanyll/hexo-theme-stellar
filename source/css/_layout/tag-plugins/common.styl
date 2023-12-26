@@ -106,3 +106,7 @@ if hexo-config('style.darkmode') == 'auto'
 
 if hexo-config('style.darkmode') == 'always'
   set_darkmode_tags()
+
+if hexo-config('style.darkmode') == 'switch'
+  .global-darkmode
+    set_darkmode_tags()

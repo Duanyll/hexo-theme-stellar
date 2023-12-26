@@ -8,6 +8,9 @@ if hexo-config('style.darkmode') == 'auto'
 if hexo-config('style.darkmode') == 'always'
   :root
     --blur-bg: alpha(black, .5)
+if hexo-config('style.darkmode') == 'switch'
+  .global-darkmode
+    --blur-bg: alpha(black, .5)
 
 .blur
   background: var(--blur-bg)

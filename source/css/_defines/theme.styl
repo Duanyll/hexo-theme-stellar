@@ -42,21 +42,26 @@ set_text_light()
   --theme-link: $color-link
 
 set_darkmode()
-  :root
-    --site-bg: hsl($color-background-h, $color-background-s * 0.5, (100 - $color-background-l) * 2 + 8)
-    --card: hsl($color-block-h, $color-block-s * 1.2, 24)
-    --block: hsl($color-block-h, $color-block-s, 16)
-    --block-border: hsl($color-block-h, $color-block-s, 24)
-    --block-hover: hsl($color-block-h, $color-block-s, 20)
-    set_text_light()
-    @media screen and (max-width: $device-mobile-max)
-      --site-bg: black
+  --site-bg: hsl($color-background-h, $color-background-s * 0.5, (100 - $color-background-l) * 2 + 8)
+  --card: hsl($color-block-h, $color-block-s * 1.2, 24)
+  --block: hsl($color-block-h, $color-block-s, 16)
+  --block-border: hsl($color-block-h, $color-block-s, 24)
+  --block-hover: hsl($color-block-h, $color-block-s, 20)
+  set_text_light()
+  @media screen and (max-width: $device-mobile-max)
+    --site-bg: black
 
 if hexo-config('style.darkmode') == 'auto'
   // 系统的dark模式
   @media (prefers-color-scheme: dark)
-    set_darkmode()
+    :root
+      set_darkmode()
 
 
 if hexo-config('style.darkmode') == 'always'
-  set_darkmode()
+  :root
+    set_darkmode()
+
+if hexo-config('style.darkmode') == 'switch'
+  .global-darkmode
+    set_darkmode()

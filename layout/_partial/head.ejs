@@ -127,4 +127,16 @@ function og_args() {
       <%- item %>
     <% }) %>
   <% } %>
+
+  <% if (theme.style.darkmode == 'switch') { %>
+    <script>
+      var darkmodeSettings = localStorage.getItem('darkmode') || 'auto';
+      var enableDarkmode = darkmodeSettings == 'true' 
+        || (darkmodeSettings == 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if (enableDarkmode) {
+        document.documentElement.classList.add('global-darkmode');
+      }
+      window.currentTheme = enableDarkmode ? 'dark' : 'light';
+    </script>
+  <% } %>
 </head>

@@ -398,7 +398,7 @@ plugins:
     typingAnimate: true # 打字机动画 
 
 style:
-  darkmode: auto # auto / always / false
+  darkmode: switch # auto / always / false / switch
   smooth_scroll: false # true / false 开启时如果目录过长可能无法准确定位
   font-size:
     root: 16px

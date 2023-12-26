@@ -26,6 +26,10 @@
   if hexo-config('style.darkmode') == 'always'
     --blur-bg: alpha(#000, .4)
 
+if hexo-config('style.darkmode') == 'switch'
+  .global-darkmode .float-panel
+    --blur-bg: alpha(#000, .4)
+
 .sidebar-toggle.mobile
   cursor: pointer
   color: var(--text-p0)

@@ -27,6 +27,12 @@
       if hexo-config('style.darkmode') == 'always'
         box-shadow: none
 
+if hexo-config('style.darkmode') == 'switch'
+  .global-darkmode .social-wrap
+    a.social
+      &:hover
+        box-shadow: none
+
 .proj-wrap
   display: grid
   grid-gap: 0.25rem 0.25rem

@@ -118,3 +118,7 @@ if hexo-config('style.darkmode') == 'auto'
 
 if hexo-config('style.darkmode') == 'always'
   set_darkmode_comments()
+
+if hexo-config('style.darkmode') == 'switch'
+  .global-darkmode
+    set_darkmode_comments()

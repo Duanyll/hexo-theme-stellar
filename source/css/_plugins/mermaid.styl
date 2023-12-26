@@ -123,3 +123,7 @@ if hexo-config('style.darkmode') == 'auto'
 
 if hexo-config('style.darkmode') == 'always'
   set_mermaid_darkmode()
+
+if hexo-config('style.darkmode') == 'switch'
+  .global-darkmode
+    set_mermaid_darkmode()

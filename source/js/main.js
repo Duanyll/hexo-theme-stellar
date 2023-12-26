@@ -411,3 +411,40 @@ if (stellar.plugins.heti) {
 if (stellar.plugins.copycode) {
   stellar.loadScript(stellar.plugins.copycode.js, { defer: true })
 }
+
+const darkmode = {
+  switch: (mode) => {
+    const modeTexts = {
+      "true": "🌙深色",
+      "false": "☀️浅色",
+      "auto": "🌗跟随系统"
+    };
+    window.localStorage.setItem('darkmode', mode);
+    var enableDarkmode = mode == 'true' || (mode == 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (enableDarkmode) {
+      document.documentElement.classList.add('global-darkmode');
+    } else {
+      document.documentElement.classList.remove('global-darkmode');
+    }
+    window.currentTheme = enableDarkmode ? 'dark' : 'light';
+    var utterances = document.querySelector('.utterances-frame')
+    if (utterances) {
+      const message = {
+        type: 'set-theme',
+        theme: window.currentTheme === 'dark' ? 'github-dark' : 'github-light'
+      };
+      utterances.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+    hud.toast(modeTexts[mode], 1000);
+  },
+  next: () => {
+    const mode = window.localStorage.getItem('darkmode');
+    if (mode == 'true') {
+      darkmode.switch('false');
+    } else if (mode == 'false') {
+      darkmode.switch('auto');
+    } else {
+      darkmode.switch('true');
+    }
+  }
+};
