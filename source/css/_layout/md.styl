@@ -167,3 +167,8 @@ h1.article-title
   scrollbar-codeblock(convert(hexo-config('style.codeblock.scrollbar')))
   @media print
     overflow-x: clip
+
+.md-text span.tikzjax
+  background: white; // TikZJax cannot adapt to dark mode
+  border-radius: $border-image
+  padding-top: 1rem
