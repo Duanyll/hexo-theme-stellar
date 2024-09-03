@@ -9,7 +9,11 @@
     </aside>
     <div class='l_main<%- page.content ? "" : " list" %>'>
       <%- partial('_partial/main/header/index') %>
-      <%- body %>
+      <% if (page.redirect) { %>
+        <%- partial('_partial/main/redirect') %>
+      <% } else { %>
+        <%- body %>
+      <% } %>
       <%- partial('_partial/main/footer') %>
       <%- partial('_partial/menubtn') %>
     </div>

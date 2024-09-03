@@ -1,0 +1,21 @@
+<article class='md-text error-page'>
+    <h1><img id='error' src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.9/arrow/064b95430caf4.svg' alt='Redirecting'></h1>
+    <p class='what'>即将跳转 / Redirecting...</p>
+    <p class='why'>页面将在 <span id="countdown">5</span> 秒后跳转。</p>
+    <p class='why'>The page will redirect in <span id="countdown-en">5</span> seconds.</p>
+    <br><br>
+    <a class='button' id='back' href="<%- page.redirect %>">立即跳转 / Redirect now</a>
+</article>
+<script>
+    var time = 5;
+    var countdown = document.getElementById('countdown');
+    var countdownEn = document.getElementById('countdown-en');
+    var timer = setInterval(function() {
+        time--;
+        countdown.innerHTML = time;
+        countdownEn.innerHTML = time;
+        if (time <= 0) {
+            clearInterval(timer);
+        }
+    }, 1000);
+</script>

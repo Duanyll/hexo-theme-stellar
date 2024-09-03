@@ -67,6 +67,14 @@ function og_args() {
   }
   return Object.assign(args, page.open_graph);
 }
+
+function generate_redirection() {
+  if (page.redirect) {
+    return '<meta http-equiv="refresh" content="5;url=' + page.redirect + '">';
+  }
+  return '';
+}
+
 %>
 <head>
   <%- meta_generator() %>
@@ -86,6 +94,8 @@ function og_args() {
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
+
+  <%- generate_redirection() %>
   
   <title><%- generate_title() %></title>
 
