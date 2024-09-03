@@ -2,7 +2,7 @@
 stellar:
   version: '1.21.0'
   homepage: 'https://xaoxuu.com/wiki/stellar/'
-  repo: 'https://github.com/xaoxuu/hexo-theme-stellar'
+  repo: 'https://github.com/duanyll/hexo-theme-stellar'
   cdn_css: # Use cdn links instead of /css/main.css
   cdn_js: # Use cdn links instead of /js/main.js
 
@@ -66,6 +66,7 @@ article:
   license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
   # 分享
   share: # [wechat, weibo, email, link]
+  source_repo: "" # 本文源码仓库地址, 如 https://github.com/user/repo/blob/main/
   # 相关文章，需要安装插件 (for layout: post)
   # npm i hexo-related-popular-posts
   related_posts:

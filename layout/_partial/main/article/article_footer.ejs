@@ -78,7 +78,7 @@ function layoutDiv() {
     function socialButtons() {
       var el = ''
       theme.article.share.forEach((item, i) => {
-        if (['wechat', 'weibo', 'email', 'link', 'print'].includes(item)) {
+        if (['wechat', 'weibo', 'email', 'link', 'print', 'source'].includes(item)) {
           el += '<a class="social share-item ' + item + '"';
           if (item == 'weibo') {
             el += ' target="_blank" rel="external nofollow noopener noreferrer"';
@@ -102,6 +102,12 @@ function layoutDiv() {
             el += ' onclick="util.copy(&quot;copy-link&quot;, &quot;' + __('message.copied') + '&quot;)"';
           } else if (item == 'print') {
             el += ' onclick="window.print()"';
+          } else if (item == 'source') {
+            if (page.source) {
+              el += ' href="' + theme.article.source_repo + 'source/' + page.source + '"';
+            } else {
+              el += ' href="' + theme.article.source_repo + '"';
+            }
           }
           el += '>';
           if (item == 'wechat') {
@@ -114,6 +120,8 @@ function layoutDiv() {
             el += '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.9/social/8411ed322ced6.svg"/>';
           } else if (item == 'print') {
             el += '<img src="/img/print.svg" />';
+          } else if (item == 'source') {
+            el += '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.9/social/08a41b181ce68.svg"/>';
           }
           el += '</a>';
         }
