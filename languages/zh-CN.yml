@@ -1,9 +1,9 @@
 btn:
   home: 主页
   blog: 文章
-  wiki: 项目
+  wiki: Wiki
   recent_publish: 近期发布
-  all_wiki: 所有项目
+  all_wiki: 所有 Wiki
   category: 分类
   categories: 分类
   tag: 标签
