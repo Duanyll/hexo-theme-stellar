@@ -256,12 +256,12 @@ if (stellar.plugins.stellar) {
 
 // swiper
 if (stellar.plugins.swiper) {
-  const swiper_api = document.getElementById('swiper-api');
+  const swiper_api = document.querySelector('.swiper');
   if (swiper_api != undefined) {
     stellar.loadCSS(stellar.plugins.swiper.css);
     stellar.loadScript(stellar.plugins.swiper.js, { defer: true }).then(function () {
       const effect = swiper_api.getAttribute('effect') || '';
-      var swiper = new Swiper('.swiper#swiper-api', {
+      var swiper = new Swiper('.swiper', {
         slidesPerView: 'auto',
         spaceBetween: 8,
         centeredSlides: true,
