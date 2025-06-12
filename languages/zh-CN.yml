@@ -34,6 +34,7 @@ meta:
     hour: 小时前
     day: 天前
     month: 个月前
+  star: 喜欢这个网站？在 GitHub 上给它一个 Star 吧！
 
 page:
   error:

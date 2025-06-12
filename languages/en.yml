@@ -34,6 +34,7 @@ meta:
     hour: hours ago
     day: days ago
     month: months ago
+  star: Like this site? Star it on GitHub!
 
 page:
   error:

@@ -158,6 +158,10 @@
 <!-- optional -->
 <%- partial('../plugins/comments/script') %>
 
+<% if (theme.article.star) { %>
+  <%- js({src: "https://buttons.github.io/buttons.js", async: true}) %>
+<% } %>
+
 <!-- inject -->
 <% if (config.inject && config.inject.script && config.inject.script.length > 0) { %>
   <% config.inject.script.forEach(function(js) { %>

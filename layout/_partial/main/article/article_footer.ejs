@@ -151,6 +151,24 @@ function layoutDiv() {
     `
   }
 
+  if (theme.article.star) {
+    el += `
+      <section id="star">
+        <div class="body">
+          <span class="github-button-wrap">
+            <a class="github-button" 
+               href="${theme.article.star}" 
+               data-color-scheme="no-preference: light; light: light; dark: dark;" 
+               data-size="large" 
+               data-show-count="true" 
+               aria-label="Star this site on GitHub">Star</a>
+            <span>${__('meta.star')}</span>
+          </span>
+        </div>
+      </section>
+    `
+  }
+
   el += '</div>';
   return el;
 }
