@@ -38,7 +38,7 @@ function layoutDiv() {
     // 发布日期
     el += '<div id="post-meta">';
     el += `
-    <span>${__("meta.created")}&nbsp;<time datetime="${date_xml(page.date)}">${date(page.date, config.date_format)}</time></span>
+    <span>${page.hidden ? __("meta.hidden") + "&nbsp;" : ""}${__("meta.created")}&nbsp;<time datetime="${date_xml(page.date)}">${date(page.date, config.date_format)}</time></span>
     `;
     el += `
     <span>${__("meta.updated")}&nbsp;<time datetime="${date_xml(page.updated)}">${date(page.updated, config.date_format)}</time></span>

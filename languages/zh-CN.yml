@@ -24,6 +24,7 @@ meta:
   comment_title: 快来参与讨论吧
   back_to_top: 回到顶部
   more: '更多「%s」'
+  hidden: 隐藏文章
   created: 发布于
   updated: 更新于
   license: 许可协议
